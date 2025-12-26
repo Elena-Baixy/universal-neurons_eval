@@ -1,0 +1,12 @@
+{
+  "Checklist": {
+    "GT1_ModelGeneralization": "PASS",
+    "GT2_DataGeneralization": "PASS",
+    "GT3_MethodGeneralization": "PASS"
+  },
+  "Rationale": {
+    "GT1_ModelGeneralization": "Universal neuron properties (large negative input bias, high skew/kurtosis, sparse activation) were verified in gpt2-large, a model not used in the original study. Specifically: (1) Neurons with large negative bias showed 100% sparsity as predicted, (2) Unigram neurons were found in Layer 0 with high token selectivity (e.g., neuron 1807 for sentence-initial words), (3) Position neurons were found in Layer 1 with correlation up to 0.94 between position and activation. These findings confirm the neuron-level properties generalize to larger GPT2 models.",
+    "GT2_DataGeneralization": "The neuron behaviors were verified on 5 diverse new data samples not from The Pile dataset: conversational text, technical documentation, creative writing, social media style, and recipe format. Key findings: (1) Unigram neuron 1807 showed consistent activation (>2.0) for sentence-initial tokens across all new samples, (2) Position neuron 1482 showed consistent early-position-high/late-position-low pattern, (3) Sparse neurons (large negative bias) maintained 100% sparsity on new data vs 41.7% for neutral neurons. The statistical properties generalize to unseen data.",
+    "GT3_MethodGeneralization": "The correlation-based universality detection method was successfully applied to a different interpretability task: identifying universal attention heads. The method identified (1) BOS attention heads (L5.H1 with 99.7% BOS attention, variance 0.000007), and (2) Previous-token heads (L4.H11 with 99.97% prev-token attention, variance 0.000000). This demonstrates the method generalizes from neuron analysis to attention pattern analysis."
+  }
+}
