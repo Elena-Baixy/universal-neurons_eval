@@ -1,0 +1,12 @@
+{
+  "Checklist": {
+    "GT1_ModelGeneralization": "PASS",
+    "GT2_DataGeneralization": "PASS",
+    "GT3_MethodGeneralization": "PASS"
+  },
+  "Rationale": {
+    "GT1_ModelGeneralization": "Tested on Pythia-410m (not used in original study). At least one trial verified that universal neuron statistical signatures (negative input bias, high kurtosis activations) exist in the new model.",
+    "GT2_DataGeneralization": "Tested on new data not from Pile dataset: recent news, code, and multilingual text. At least one trial verified that neuron activation patterns hold on new data.",
+    "GT3_MethodGeneralization": "Tested if methods (weight statistics, vocab kurtosis, feature detection) generalize to other components (attention heads, embeddings). At least one trial verified method generalizability."
+  }
+}

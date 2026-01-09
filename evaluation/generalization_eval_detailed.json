@@ -1,0 +1,17 @@
+{
+  "GT1": {
+    "status": "PASS",
+    "trials": [
+      {
+        "trial": "Activation kurtosis test",
+        "success": true,
+        "details": "Tested if neurons show high kurtosis activation patterns (universal neuron signature)"
+      },
+      {
+        "trial": "Weight distribution test",
+        "success": true,
+        "details": "Found 91747 neurons with negative input bias"
+      },
+      {
+        "trial": "Sparse activation pattern",
+        "success": 

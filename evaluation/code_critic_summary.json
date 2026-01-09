@@ -1,0 +1,29 @@
+{
+  "Runnable_Percentage": 98.91,
+  "Incorrect_Percentage": 0.0,
+  "Redundant_Percentage": 0.0,
+  "Irrelevant_Percentage": 0.0,
+  "Correction_Rate_Percentage": 0.0,
+  "Issues": {
+    "Runnable_Issues_Exist": true,
+    "Output_Mismatch_Exists": false,
+    "Incorrect_Exists": false,
+    "Redundant_Exists": false,
+    "Irrelevant_Exists": false
+  },
+  "Checklist": {
+    "C1_All_Runnable": "FAIL",
+    "C2_All_Correct": "PASS",
+    "C3_No_Redundant": "PASS",
+    "C4_No_Irrelevant": "PASS"
+  },
+  "Rationale": {
+    "C1_All_Runnable": "1 block(s) have Runnable=N (spacy dependency missing)",
+    "C2_All_Correct": "All blocks have correct implementation",
+    "C3_No_Redundant": "No redundant code detected",
+    "C4_No_Irrelevant": "All code contributes to project goal"
+  },
+  "Special_cases": {
+    "analysis/sequence_features.py": "Requires spacy package which is not installed. Can be installed with: pip install spacy"
+  }
+}
