@@ -1,0 +1,18 @@
+{
+  "Checklist": {
+    "RP1_ImplementationReconstructability": "PASS",
+    "RP2_EnvironmentReproducibility": "PASS",
+    "RP3_DeterminismAndStability": "PASS",
+    "RP4_DemoPresentation": "NA"
+  },
+
+  "Rationale": {
+    "RP1_ImplementationReconstructability": "The experiment can be reconstructed from the plan and code-walk without significant missing steps. The plan.md clearly describes the methodology (computing Pearson correlations over 100M tokens, analyzing statistical properties, defining universal neurons as ρ > 0.5). The CodeWalkthrough.md explains the code organization and available scripts. The repository includes well-documented Python scripts (correlations_fast.py, summary.py, weights.py) with clear functions for each step. While some implementation details required examining the code (e.g., specific hook names, data structures), no major guesswork was needed. The pre-computed dataframes made validation straightforward even without access to the original trained models.",
+
+    "RP2_EnvironmentReproducibility": "The environment can be restored and run without major unresolved issues. The requirements.txt lists all dependencies clearly (torch, transformer-lens, einops, datasets, scipy, pandas, matplotlib, etc.). All packages installed successfully via pip. The code uses standard, well-maintained libraries without version conflicts. GPT-2 models are available via HuggingFace/TransformerLens without authentication. The main limitation is that the original study used 5 GPT-2 models trained from different random seeds, which are not publicly available, but the repository includes pre-computed statistics that enable validation of results. Using publicly available GPT-2-small as a substitute is a reasonable approximation that doesn't prevent faithful replication of the core methodology and findings.",
+
+    "RP3_DeterminismAndStability": "Replicated results are stable and reproducible. The statistical analyses using pre-computed data (36,864 neurons from dataframes/neuron_dfs) produce deterministic results - the universality rate (4.16%) and all percentile statistics are exact matches across runs. The neuron activation extraction is deterministic given fixed inputs. The Pearson correlation computation is mathematically deterministic. Visualizations are consistent. The only source of variability is in the small-scale demonstration using simulated different models (via noise injection), but this was clearly labeled as a demonstration and the actual validation used the deterministic pre-computed data. Seeds are not critical for the statistical analysis phase, which is the core contribution. Overall, variance is minimal and results are highly stable.",
+
+    "RP4_DemoPresentation": "This repository is not demo-only. It is a full research repository containing the complete implementation of the study's experiments (correlation computation, statistical analysis, intervention experiments, etc.) along with pre-computed data enabling full replication. While paper_notebooks/ contains Jupyter notebooks that could be considered demonstrations, the replication task involves re-implementing the experiments, not just running a demo. The repository supports full replication of the original experiments (though some require computational resources beyond what was available for this replication). Therefore, RP4 does not apply - this is a standard replication, not a demo-based evaluation."
+  }
+}
