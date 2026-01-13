@@ -1,0 +1,26 @@
+{
+  "Runnable_Percentage": 96.92307692307692,
+  "Incorrect_Percentage": 3.076923076923077,
+  "Redundant_Percentage": 3.076923076923077,
+  "Irrelevant_Percentage": 0.0,
+  "Correction_Rate_Percentage": 0.0,
+  "Issues": {
+    "Runnable_Issues_Exist": true,
+    "Output_Mismatch_Exists": false,
+    "Incorrect_Exists": true,
+    "Redundant_Exists": true,
+    "Irrelevant_Exists": false
+  },
+  "Checklist": {
+    "C1_All_Runnable": "FAIL",
+    "C2_All_Correct": "FAIL",
+    "C3_No_Redundant": "FAIL",
+    "C4_No_Irrelevant": "PASS"
+  },
+  "Rationale": {
+    "C1_All_Runnable": "FAIL - 2 blocks failed: (1) weights.py/run_full_weight_analysis - compute_neuron_composition returns 4 values but code expects 3; (2) analysis/vocab_df.py/make_vocab_df - Missing .detach() before .numpy() on tensors with requires_grad=True",
+    "C2_All_Correct": "FAIL - 2 blocks have implementation errors: same issues as C1 - the runnable issues are caused by implementation bugs",
+    "C3_No_Redundant": "FAIL - 2 blocks are partially redundant: entropy_intervention.py/make_hooks and run_intervention_experiment are similar to intervention.py versions but extend functionality for entropy experiments",
+    "C4_No_Irrelevant": "PASS - All 65 evaluated code blocks contribute to the project goal of studying universal neurons across GPT2 models"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Checklist": {
+    "GT1_ModelGeneralization": "PASS",
+    "GT2_DataGeneralization": "PASS",
+    "GT3_MethodGeneralization": "PASS"
+  },
+  "Rationale": {
+    "GT1_ModelGeneralization": "The statistical signatures of universal neurons (high skew, high kurtosis, negative input_bias correlation with interpretability) successfully generalize to GPT2-XL, a model not used in the original work. We found: (1) Strong negative correlations between input_bias and activation skew (-0.417) and kurtosis (-0.422), (2) The quartile pattern holds: neurons with most negative input_bias have mean skew=9.6 vs 4.3 for least negative, (3) Letter-selective neurons exist in GPT2-XL with the same characteristics.",
+    "GT2_DataGeneralization": "The findings hold on AG News dataset, which is completely different from The Pile used in the original work. We verified: (1) Correlation between input_bias and skew (-0.298) and kurtosis (-0.348) on new data, (2) The quartile pattern is preserved (Q1 skew=8.9 vs Q4 skew=4.9), (3) Token-selective neurons found on new data (e.g., neuron 3561 selective for 'fib' tokens).",
+    "GT3_MethodGeneralization": "The statistical signature method (using weight statistics to identify interpretable components) successfully transfers to attention head analysis. We found: (1) Correlation between qk_product and attention entropy (-0.466), (2) Identified interpretable attention head L4.H2 (BOS attention head, 85-96% attention to BOS token) using weight signatures, (3) The quartile pattern holds for attention heads (focused heads have 2.4x larger qk_product than diffuse heads)."
+  }
+}
